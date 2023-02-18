@@ -167,6 +167,17 @@ function createNewSection(id, area, count) {
     div.appendChild(button);
 }
 
+function colorEffect(idName){
+    id = document.getElementById(idName);
+    const colorCode = Math.round(Math.random() * 1000000);
+    id.style.backgroundColor = '#' + colorCode.toString();
+}
+
+function noColorEffect(idName){
+    id = document.getElementById(idName);
+    id.style.backgroundColor = 'white';
+}
+
 
 let count = 1;
 

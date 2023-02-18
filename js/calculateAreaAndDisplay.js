@@ -167,6 +167,7 @@ function createNewSection(id, area, count) {
     div.appendChild(button);
 }
 
+
 let count = 1;
 
 document.getElementById('triangle-area-cal-btn').addEventListener('click', function() {
@@ -203,4 +204,9 @@ document.getElementById('ellipse-area-cal-btn').addEventListener('click', functi
     const area = calculateAreaAndDisplay('ellipse-area-cal-btn');
     createNewSection('Ellipse', area, count);
     count ++;
+});
+
+
+document.getElementById('blog-btn').addEventListener('click', function() {
+    window.location.href = 'blog.html';
 });

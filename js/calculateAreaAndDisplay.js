@@ -1,3 +1,4 @@
+// This function will take input from input field and calculate area and also display input value. Finally will return area value or return Zero for invalid input.
 function calculateAreaAndDisplay(id) {
     let area;
 
@@ -135,6 +136,7 @@ function calculateAreaAndDisplay(id) {
     }
 }
 
+// This function will create a new section and will add in the calculation area.
 function createNewSection(id, area, count) {
     const calculationArea = document.getElementById('calculation-area');
     const div = document.createElement('div');
@@ -147,8 +149,6 @@ function createNewSection(id, area, count) {
     div.classList.add('d-flex');
     div.classList.add('justify-content-between');
     div.classList.add('mb-3');
-
-    p1.classList.add('ms-2');
 
     button.classList.add('btn');
     button.classList.add('btn-primary');
@@ -167,12 +167,14 @@ function createNewSection(id, area, count) {
     div.appendChild(button);
 }
 
+// This function will change the background color randomly.
 function colorEffect(idName){
     id = document.getElementById(idName);
     const colorCode = Math.round(Math.random() * 1000000);
     id.style.backgroundColor = '#' + colorCode.toString();
 }
 
+// This function will set the background color white.
 function noColorEffect(idName){
     id = document.getElementById(idName);
     id.style.backgroundColor = 'white';
@@ -216,7 +218,6 @@ document.getElementById('ellipse-area-cal-btn').addEventListener('click', functi
     createNewSection('Ellipse', area, count);
     count ++;
 });
-
 
 document.getElementById('blog-btn').addEventListener('click', function() {
     window.location.href = 'blog.html';

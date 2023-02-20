@@ -1,4 +1,4 @@
-// This function will take input from input field and calculate area and also display input value. Finally will return area value or return Zero for invalid input.
+// This function will take input from input field and calculate area and also display input value. Finally will return area's value or return Zero for invalid input.
 function calculateAreaAndDisplay(id) {
     let area;
 
@@ -152,6 +152,8 @@ function createNewSection(id, area, count) {
 
     button.classList.add('btn');
     button.classList.add('btn-primary');
+    button.setAttribute('id', 'convert-btn' + count.toString());
+    p2.setAttribute('id', 'area-value' + count.toString());
     
     p1.innerText = count.toString() + '. ' + id;
     p2.innerText = area + 'cm';
@@ -222,3 +224,15 @@ document.getElementById('ellipse-area-cal-btn').addEventListener('click', functi
 document.getElementById('blog-btn').addEventListener('click', function() {
     window.location.href = 'blog.html';
 });
+
+document.body.addEventListener('click', function(event) {
+    for (let index = 1; index < count; index++) {
+        if (event.target.id === 'convert-btn' + index.toString()) {        
+            const areaValue = document.getElementById('area-value' + index.toString());
+            const squareMeter = parseFloat(areaValue.innerText) / 10000;
+
+            areaValue.innerHTML = `<span>${(squareMeter.toFixed(2)).toString()}m<sup>2</sup></span>`;
+            document.getElementById('convert-btn' + index.toString()).innerHTML = `<span>Convert to cm<sup>2</sup></span>`;
+        }  
+    }
+})
